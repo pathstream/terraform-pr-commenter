@@ -9,7 +9,7 @@ inputs:
     description: 'The type of comment. Options: [fmt, init, plan]'
     required: true
   commenter_input:
-    description: 'The comment to post from a previous step output'
+    description: 'The comment to post from a previous step output. Plan must be a file.'
     required: true
   commenter_exitcode:
     description: 'The exit code from a previous step output'
