@@ -179,7 +179,11 @@ if [[ $COMMAND == 'plan' ]]; then
     echo -e "\033[34;1mINFO:\033[0m No existing plan PR comment found."
   fi
   if [ -z "$INPUT" ]; then
-    INPUT=$FULL_PLAN
+    if [ -n "$FULL_PLAN_FILE" ] && [ -f "$FULL_PLAN_FILE" ]; then
+      INPUT=$(cat "$FULL_PLAN_FILE")
+    else
+      INPUT=$FULL_PLAN
+    fi
   fi
 
   # Exit Code: 0, 2
